@@ -14,7 +14,7 @@ import path from "node:path";
 // Types
 //-----------------------------------------------------------------------------
 
-/** @typedef {import("@eslint/core").ConfigObject} FlatConfig */
+/** @typedef {import("./types.ts").ConfigObject} FlatConfig */
 
 //-----------------------------------------------------------------------------
 // Exports

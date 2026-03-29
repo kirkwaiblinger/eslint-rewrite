@@ -7,11 +7,11 @@
   "types": "dist/esm/index.d.ts",
   "exports": {
     "require": {
-      "types": "./dist/cjs/types.d.cts",
+      "types": "./dist/cjs/index.d.cts",
       "default": "./dist/cjs/index.cjs"
     },
     "import": {
-      "types": "./dist/esm/types.d.ts",
+      "types": "./dist/esm/index.d.ts",
       "default": "./dist/esm/index.js"
     }
   },
@@ -23,7 +23,8 @@
   },
   "scripts": {
     "build:cts": "node ../../tools/build-cts.js dist/esm/index.d.ts dist/cjs/index.d.cts",
-    "build": "rollup -c && tsc -p tsconfig.esm.json && npm run build:cts",
+    "build:types-export": "node -e \"const fs=require('fs');fs.appendFileSync('dist/esm/index.d.ts','\\nexport * from \\\"./types.js\\\";\\n');fs.appendFileSync('dist/cjs/index.d.cts','\\nexport * from \\\"./types.cts\\\";\\n');\"",
+    "build": "rollup -c && tsc -p tsconfig.esm.json && npm run build:cts && npm run build:types-export",
     "lint:types": "attw --pack",
     "pretest": "npm run build",
     "test": "npm run test:types",

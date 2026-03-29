@@ -8,7 +8,7 @@
 //-----------------------------------------------------------------------------
 
 export { convertIgnorePatternToMinimatch } from "@eslint/core";
-import { includeIgnoreFile as includeIgnoreFileImpl } from "@eslint/core";
+import { includeIgnoreFileImpl } from "@eslint/core";
 
 //-----------------------------------------------------------------------------
 // Types
