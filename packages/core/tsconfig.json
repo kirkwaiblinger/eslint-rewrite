@@ -1,6 +1,6 @@
 {
   "extends": "../../tsconfig.base.json",
-  "files": ["src/types.ts"],
+  "files": ["src/index.js"],
   "compilerOptions": {
     "outDir": "dist/esm"
   }
